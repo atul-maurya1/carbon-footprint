@@ -20,13 +20,15 @@ const app = express()
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }))
 
 // CORS
+const cors = require('cors')
+
 app.use(cors({
   origin: [
-    process.env.CLIENT_URL || 'http://localhost:5173',
-    'http://localhost:3000',
+    'https://carbon-footprint-frontend-62aqeflqk-atul15.vercel.app'
   ],
-  credentials: true,
+  credentials: true
 }))
+
 
 // Rate limiting
 app.use('/api/v1/ai', rateLimit({ windowMs: 60_000, max: 20, message: { success: false, error: { message: 'Too many AI requests, please slow down.' } } }))
