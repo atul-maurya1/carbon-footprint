@@ -20,11 +20,10 @@ const app = express()
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }))
 
 // CORS
-const cors = require('cors')
 
 app.use(cors({
   origin: [
-    'https://carbon-footprint-frontend-62aqeflqk-atul15.vercel.app'
+    'https://carbon-footprint-frontend-62aqeflqk-atul15.vercel.app' 
   ],
   credentials: true
 }))
