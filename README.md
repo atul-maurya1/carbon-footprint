@@ -87,7 +87,7 @@ Start both servers concurrently to run the project locally.
   # Starts Vite server on port 5173
   ```
 
-Open **[http://localhost:5173](http://localhost:5173)** in your browser. 🌿
+Open **[https://carbon-footprint-frontend-dun.vercel.app/](https://carbon-footprint-frontend-dun.vercel.app/)** in your browser. 🌿
 
 ---
 
@@ -101,6 +101,20 @@ We resolved several bugs to make this codebase fully functional:
 * **AI Chat & Insights Response Parsing**: Corrected destructuring accessors to fetch backend replies from `data?.data` (e.g. `data?.data?.reply`) instead of `data?.reply`, enabling dynamic chatbot responses and insights mapping on the insights dashboard.
 
 For a full log of modifications, check **[auth_bug_fix_report.md](file:///C:/Users/ASUS/.gemini/antigravity-cli/brain/12ae9448-203e-422b-8e0d-57053a6ea824/auth_bug_fix_report.md)**.
+
+---
+
+## 🧪 Testing
+
+An automated integration test suite has been added to verify backend REST endpoints. The tests execute real HTTP calls verifying health checks, user registration, login, JWT authentication, AI advice, and activity logging lifecycles.
+
+### Running Integration Tests:
+Run the test script from the root of the server directory:
+```bash
+cd server
+node test-api.js [TARGET_URL]
+```
+*(If no `TARGET_URL` is provided, it defaults to testing the local server at `http://localhost:3001/api/v1`)*
 
 ---
 
